@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+<head>
+    <title>Emergency - API Puzzle Game</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-dark border-secondary">
+                <div class="card-header border-secondary">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Экстренная эвакуация
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div id="info" class="lead mb-0">
+                        Запрос на эвакуацию отправлен, но, видимо, произошла ошибка.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Send evacuation request when page loads
+        fetch('/evacuate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({}),
+        })
+    </script>
+</body>
+</html>

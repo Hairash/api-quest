@@ -1,0 +1,39 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+.response-area {
+    background-color: var(--bs-dark);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+code {
+    background-color: var(--bs-dark);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+}
+
+/* Custom styles to enhance the pager device look */
+.card {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle glow effect to buttons on hover */
+.btn:hover {
+    box-shadow: 0 0 10px var(--bs-info);
+    transition: all 0.3s ease;
+}
+
+/* Add some retro-style elements */
+.card-header {
+    border-bottom: 2px solid var(--bs-secondary);
+}
+
+/* Ensure text is readable */
+.lead {
+    color: var(--bs-light);
+    line-height: 1.6;
+}

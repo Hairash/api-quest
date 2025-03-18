@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+<head>
+    <title>Mission Complete - API Puzzle Game</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <style>
+        /* Custom styles to enhance the pager device look */
+        .card {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Add a subtle glow effect to buttons on hover */
+        .btn:hover {
+            box-shadow: 0 0 10px var(--bs-info);
+            transition: all 0.3s ease;
+        }    
+
+        /* Ensure text is readable */
+        .lead {
+            color: var(--bs-light);
+            line-height: 1.6;
+        }
+
+        .responsive-image {
+            max-height: 600px;  /* Maximum height */
+            width: auto;        /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure whole image is visible */
+            display: block;     /* Remove extra space under image */
+            margin: 0 auto;     /* Center the image */
+        }
+    </style>
+</head>
+<body class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card bg-dark border-success">
+                <div class="card-body">
+                    <i class="bi text-success display-1 mb-4"></i>
+                    <h2 class="card-title mb-4">Миссия выполнена успешно!</h2>
+                    <p class="card-text">
+                        <img src="https://i.imgur.com/XHKyofY.png" class="img-fluid rounded mb-3 responsive-image" alt="Mission Complete">
+                    </p>
+                    <p class="lead">
+                        Вы успешно выбрались из здания и уничтожили опасный вирус.<br>
+                        Вертолёт доставит вас на базу.
+                    </p>
+                    <p>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-success">
+                            <i class="bi bi-gift me-2"></i>Ваша награда
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
