@@ -403,6 +403,11 @@ def emergency():
     return render_template('emergency.html')
 
 
+@app.route('/help')
+def help_page():
+    return render_template('help.html')
+
+
 @app.route('/evacuate', methods=['POST'])
 def evacuate():
     data = request.get_json()
@@ -425,6 +430,30 @@ def evacuate():
         json.dumps({"error": "Введённые координаты не найдены"}, ensure_ascii=False),
         mimetype='application/json; charset=utf-8',
         status=400,
+    )
+
+
+@app.route('/hints/<int:hint_id>')
+def get_tip(hint_id):
+    if hint_id == 1:
+        return Response(
+            json.dumps({
+                "message": "Распространнённая практика в API - для одного и того же объекта можно использовать"
+                           " разные методы, чтобы совершить разные действия. Например, для получения информации об"
+                           " объекте обычно используется метод GET. Если ты не знаешь, как совершить конкретное"
+                           " действие, попробуй использовать разные методы с тем же URL. Методов не так много,"
+                           " и они легко гуглятся.",
+                "success": True,
+                "subject": "API",
+                "level": "expert",
+            }, ensure_ascii=False),
+            mimetype='application/json; charset=utf-8',
+        )
+
+    return Response(
+        json.dumps({"error": "Tip not found"}, ensure_ascii=False),
+        mimetype='application/json; charset=utf-8',
+        status=404,
     )
 
 
