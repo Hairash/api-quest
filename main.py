@@ -434,7 +434,7 @@ def evacuate():
 
 
 @app.route('/hints/<int:hint_id>')
-def get_tip(hint_id):
+def get_hint(hint_id):
     if hint_id == 1:
         return Response(
             json.dumps({
@@ -450,8 +450,20 @@ def get_tip(hint_id):
             mimetype='application/json; charset=utf-8',
         )
 
+    if hint_id == 2:
+        return Response(
+            json.dumps({
+                "message": "Когда ты в пэйджере нажимаешь на кнопку EMERGENCY, запрос на эвакуацию действительно"
+                           " отпавляется, только с ошибкой. Как увидеть этот запрос?",
+                "success": True,
+                "subject": "Emergency",
+                "level": "expert",
+            }, ensure_ascii=False),
+            mimetype='application/json; charset=utf-8',
+        )
+
     return Response(
-        json.dumps({"error": "Tip not found"}, ensure_ascii=False),
+        json.dumps({"error": "Hint not found"}, ensure_ascii=False),
         mimetype='application/json; charset=utf-8',
         status=404,
     )
